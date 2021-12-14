@@ -10,7 +10,7 @@ module.exports = {
         const menu = new MenuItems(null)
         // console.log()
 
-        if (message.content === 'p') {
+        if (message.content === '!help') {
             const options = menu.items;
             const content = menu.label;
 
