@@ -1,44 +1,28 @@
 const {MessageActionRow, MessageSelectMenu } = require('discord.js');
-const fs = require('fs');
-const parser = require('xml2json');
-
-var xmldata = '';
-
-fs.readFile('./items.xml', (err, data) => {
-    if(!err){
-        xmldata = parser.toJson(data, {object:true});
-    }
-})
+const MenuItems = require('../utils/menuItems')
 
 module.exports = {
     name: 'messageCreate',
     execute(message) {
 
         console.log("Message received!");
-        console.log(xmldata);
+        // console.log(data.items);
+        const menu = new MenuItems(null)
+        // console.log()
 
-        if (message.content === 'ping') {
-            const options = [];
-            if(xmldata.items.category.length > 0){
-                xmldata.items.category.forEach(val => {
-                    options.push({label: val.name, value: val.id})
-                });
-            }
-            // xmldata.items.forEach( val => {
-            //     console.log(val)
-            // });
-            // console.log(xmldata.items.)
-            console.log("type: " + typeof xmldata.items.category)
+        if (message.content === 'p') {
+            const options = menu.items;
+            const content = menu.label;
 
             const row = new MessageActionRow()
                 .addComponents(
                     new MessageSelectMenu()
-                        .setCustomId('select')
-                        .setPlaceholder('Nothing selected')
+                        .setCustomId('select1')
+                        .setPlaceholder('Select something')
                         .addOptions(options),
                 );
 
-            message.reply({ content: 'What are you looking for?', components: [row] });
+            message.reply({ content: content, components: [row] });
         }
     },
 };

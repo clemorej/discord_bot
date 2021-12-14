@@ -1,3 +1,6 @@
+<!--*Category must have a question(s) and question must have an answer-->
+<!--*Categories and answers must have a unique id-->
+
 <items>
     <category id="c1" name="Category 1">
         <question id="q11" answer="I am a bot">What am I?</question>
@@ -13,6 +16,28 @@
             <question id="q222" answer="answer 2.2.2">question 2.2.2</question>
         </category>
     </category>
+    <category id="c3" name="Category 3">
+        <category id="c31" name="Category 3.1">
+            <category id="c311" name="Category 3.1.1">
+                <category id="c3111" name="Category 3.1.1.1">
+                    <question id="c31111" answer="answer 3.1.1.1.1">question 2.1.1</question>
+                    <question id="c31112" answer="answer 3.1.1.1.2">question 2.1.2</question>
+                </category>
+                <category id="c3112" name="Category 3.1.1.2">
+                    <question id="c31121" answer="answer 3.1.1.2.1">question 2.2.1</question>
+                    <question id="c31122" answer="answer 3.1.1.2.2">question 2.2.2</question>
+                </category>
+            </category>
+            <category id="c312" name="Category 3.1.2">
+                <question id="c3121" answer="answer 3.1.2.1">question 2.1.1</question>
+                <question id="c3122" answer="answer 3.1.2.2">question 2.1.2</question>
+            </category>
+        </category>
+        <category id="c32" name="Category 3.2">
+            <question id="q321" answer="answer 3.2.1">question 2.2.1</question>
+            <question id="q322" answer="answer 3.2.2">question 2.2.2</question>
+        </category>
+    </category>
     <question id="q1" answer="I am a bot">What am I?</question>
-    <question id="q2" answer="You are human">What are you?</question>
+    <question id="q2" answer="I am a bot">What am I?</question>
 </items>
